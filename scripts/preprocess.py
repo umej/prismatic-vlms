@@ -10,6 +10,8 @@ By default, runs download & extraction automatically.
 
 Run with: `python scripts/preprocess.py --dataset_id <DATASET_ID>`
 """
+import os
+os.environ['CURL_CA_BUNDLE'] = ''
 
 from dataclasses import dataclass
 from pathlib import Path

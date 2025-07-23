@@ -40,6 +40,11 @@ LLAMA2_MODELS = {
         "llm_family": "llama2", "llm_cls": LlamaForCausalLM, "hf_hub_path": "meta-llama/Llama-2-13b-chat-hf"
     },
 
+	# === Tiny LLaMa 1.1B ===
+    "tinyllama-1.1b": {
+        "llm_family": "llama2", "llm_cls": LlamaForCausalLM, "hf_hub_path": "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    },
+
     # === Vicuna v1.5 Chat Models ===
     "vicuna-v15-7b": {
         "llm_family": "llama2", "llm_cls": LlamaForCausalLM, "hf_hub_path": "lmsys/vicuna-7b-v1.5"

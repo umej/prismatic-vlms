@@ -589,6 +589,20 @@ MODEL_REGISTRY = {
         },
     },
 
+    "prism-dinosiglip+1b": {
+        "model_id": "prism-dinosiglip+1b",
+        "names": ["Prism-DINOSigLIP 1B"],
+        "description": {
+            "name": "DINOSigLIP Prism 1B",
+            "optimization_procedure": "single-stage",
+            "visual_representation": "DINOv2 ViT-L/14 + SigLIP ViT-SO/14 @ 384px",
+            "image_processing": "Naive Resize",
+            "language_model": "Tiny Llama 1.1B",
+            "datasets": ["LLaVa v1.5 Instruct", "LVIS-Instruct-4V", "LRV-Instruct"],
+            "train_epochs": 2,
+        },
+    },
+
     # === DINOSigLIP 224px Prism Models ===
     "prism-dinosiglip-224px-controlled+7b": {
         "model_id": "prism-dinosiglip-224px-controlled+7b",
@@ -640,6 +654,19 @@ MODEL_REGISTRY = {
             "visual_representation": "CLIP ViT-L/14 @ 336px",
             "image_processing": "Letterbox",
             "language_model": "Llama-2 Chat 13B",
+            "datasets": ["LLaVa v1.5 Instruct"],
+            "train_epochs": 1,
+        }
+    },
+    "tinyllama+1.1b": {
+        "model_id": "tinyllama+1.1b",
+        "names": ["Tiny Llama 1.1B"],
+        "description": {
+            "name": "Tiny Llama 1.1B",
+            "optimization_procedure": "single-stage",
+            "visual_representation": "CLIP ViT-L/14 @ 336px",
+            "image_processing": "Letterbox",
+            "language_model": "Tiny Llama 1.1B",
             "datasets": ["LLaVa v1.5 Instruct"],
             "train_epochs": 1,
         }

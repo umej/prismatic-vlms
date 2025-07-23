@@ -49,7 +49,21 @@ DATASET_REGISTRY: Dict[str, List[DatasetComponent]] = {
             "do_rename": False,
         }
     ],
-
+    "llava-cc3m-595k": [
+        {
+            "name": "chat.json",        # Contains the "chat" traces :: {"human" => <prompt>, "gpt" => <caption>}
+            "extract": False,
+            "url": "https://huggingface.co/datasets/liuhaotian/LLaVA-CC3M-Pretrain-595K/resolve/main/chat.json",
+            "do_rename": True,
+        },
+        {
+            "name": "images",           # Contains the LLaVa Processed Images (jpgs, 224x224 resolution)
+            "extract": True,
+            "extract_type": "directory",
+            "url": "https://huggingface.co/datasets/liuhaotian/LLaVA-CC3M-Pretrain-595K/resolve/main/images.zip",
+            "do_rename": False,
+        }
+    ],
     "llava-v1.5-instruct": [
         {
             "name": "llava_v1_5_mix665k.json",

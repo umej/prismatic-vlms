@@ -43,7 +43,7 @@ class LLaVa_V15_Config(DatasetConfig):
         Path("download/llava-v1.5-instruct/llava_v1_5_mix665k.json"),
         Path("download/llava-v1.5-instruct/"),
     )
-    dataset_root_dir: Path = Path("data")
+    dataset_root_dir: Path = Path("training_data/")
 
 
 # [Multimodal-Only] LLava-v15 WITHOUT the Language-Only ShareGPT Data (No Co-Training)
@@ -91,7 +91,7 @@ class LLaVa_LRV_Config(DatasetConfig):
         Path("download/llava-v1.5-instruct/llava_v1_5_lrv_mix1008k.json"),
         Path("download/llava-v1.5-instruct/"),
     )
-    dataset_root_dir: Path = Path("/mnt/fsx/skaramcheti/datasets/prismatic-vlms")
+    dataset_root_dir: Path = Path("training_data/")
 
 
 # LLaVa-v15 + LVIS-Instruct-4V + LRV-Instruct

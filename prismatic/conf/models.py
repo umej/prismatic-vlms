@@ -271,6 +271,10 @@ class Ext_Exp_13B_Llama2_Chat(Exp_13B_One_Stage):
     model_id: str = "llama2-chat+13b"
     llm_backbone_id: str = "llama2-13b-chat"
 
+@dataclass
+class Ext_Exp_TinyLlama(Exp_7B_One_Stage):
+    model_id: str = "tinyllama+1.1b"
+    llm_backbone_id: str = "tinyllama-1.1b"
 
 @dataclass
 class Ext_Exp_7B_Mistral_V1(Exp_7B_One_Stage):
@@ -488,6 +492,14 @@ class Prism_7B_DINOSigLIP_224px(Exp_7B_One_Stage):
     arch_specifier: str = "no-align+fused-gelu-mlp"
     finetune_epochs: int = 2
 
+@dataclass
+class Prism_1B_DINOSigLIP_224px(Exp_7B_One_Stage):
+    model_id: str = "prism-dinosiglip-224px+1b"
+    vision_backbone_id: str = "dinosiglip-vit-so-224px"
+    image_resize_strategy: str = "resize-naive"
+    llm_backbone_id: str = "tinyllama-1.1b"
+    arch_specifier: str = "no-align+fused-gelu-mlp"
+    finetune_epochs: int = 2
 
 # === Define a Model Registry Enum for Reference & Validation ===
 @unique
@@ -523,6 +535,7 @@ class ModelRegistry(Enum):
     # === Section 4.3 :: Language Models ===
     EXP_LLAMA2_7B = Exp_7B_Llama2
     EXP_LLAMA2_13B = Exp_13B_Llama2
+    EXP_TINY_LLAMA = Ext_Exp_TinyLlama
 
     # ~ Additional LLM Backbone Experiments :: LLaMa-2 Chat, Mistral v0.1, Mistral v0.1 Instruct, Phi-2 ~
     EXT_EXP_LLAMA2_CHAT_7B = Ext_Exp_7B_Llama2_Chat
@@ -565,6 +578,7 @@ class ModelRegistry(Enum):
     # === Inference Optimized :: 224px Prism Models ===
     PRISM_DINOSIGLIP_224PX_CONTROLLED_7B = Prism_7B_DINOSigLIP_224px_Controlled
     PRISM_DINOSIGLIP_224PX_7B = Prism_7B_DINOSigLIP_224px
+    PRISM_DINOSIGLIP_224PX_1B = Prism_1B_DINOSigLIP_224px
 
     @property
     def model_id(self) -> str:
